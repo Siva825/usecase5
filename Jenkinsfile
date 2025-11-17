@@ -41,7 +41,7 @@
             steps {
                 echo "********** Ansible deployment is done ************"
                 dir('/var/lib/jenkins/workspace/usecase5') {
-                    sh 'ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -i /var/lib/jenkins/workspace/ip.txt first.yaml --private-key= /var/lib/jenkins/.ssh/id_ed25519'
+                    sh 'ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -i /var/lib/jenkins/workspace/ip.txt first.yaml --private-key=/var/lib/jenkins/.ssh/id_ed25519'
                 }
             }
         }
