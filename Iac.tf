@@ -21,6 +21,10 @@ resource "google_compute_instance" "instance1" {
     }
 }
 
+output "vm_external_ip" {
+  value = google_compute_instance.instance1.network_interface[0].access_config[0].nat_ip
+}
+
 
 resource "local_file" "file1" {
     content  = google_compute_instance.instance1.network_interface[0].access_config[0].nat_ip
