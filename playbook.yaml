@@ -1,4 +1,4 @@
-  - name: Install Docker on Debian
+ - name: Install Docker on Debian
    hosts: all
    become: true
    tasks:
@@ -75,7 +75,6 @@
         restart_policy: always
         ports:
           - "88:5000"
-
 
 
 
