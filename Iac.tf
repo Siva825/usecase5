@@ -1,5 +1,6 @@
-provider "google" {
+ provider "google" {
     project = "siva-477505" 
+    credentials = file("/var/lib/jenkins/a.json")
 }
 resource "google_compute_instance" "instance1" {
     name = "vm-1"
