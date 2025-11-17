@@ -39,12 +39,12 @@
     - debug:
         msg: "Docker installed successfully: {{ docker_version.stdout }}"
      
-    - name: pulling nginx image from gar
+    - name: pulling flask image from dockerhub
       docker_image:
         name: siva2626/flask1:v1
         source: pull
 
-    - name: running nginx container
+    - name: running flask container
       docker_container:
         name: flaskapp
         image: siva2626/flask1:v1
