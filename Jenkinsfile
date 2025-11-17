@@ -1,4 +1,4 @@
-pipeline {  
+ pipeline {  
     agent any  
     environment {  
         DOCKERHUB_CREDENTIALS = credentials('docker-creds')  
@@ -8,7 +8,7 @@ pipeline {
             steps {  
                 echo "*********** cloning the code **********"  
                 sh 'rm -rf usecase5 || true'  
-                sh 'git clone https://github.com/siva2626/usecase5.git' 
+                sh 'git clone https://github.com/Siva825/usecase5.git' 
             }  
         }   
         stage('Docker image build') {  
@@ -29,4 +29,3 @@ pipeline {
         }      
     }  
 }  
-             
