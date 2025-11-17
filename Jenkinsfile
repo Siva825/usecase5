@@ -40,8 +40,8 @@
         stage('Ansible deployment') {
             steps {
                 echo "********** Ansible deployment is done ************"
-                dir('/var/lib/jenkins/workspace') {
-                    sh 'ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -i /home/sivapk188/vm_public_ip.txt first.yaml --private-key=/home/sivapk188/.ssh/id_ed25519'
+                dir('/var/lib/jenkins/workspace/usecase5') {
+                    sh 'ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -i /var/lib/jenkins/workspace/ip.txt first.yaml --private-key= /var/lib/jenkins/.ssh/id_ed25519'
                 }
             }
         }
