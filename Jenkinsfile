@@ -26,6 +26,27 @@
                 docker push siva2626/flask1:v1  
                 """  
             }  
-        }      
+        }
+        stage('vm creation using Terraform') {
+            steps {
+                echo "********** VM creation is done ************"
+                dir('/home/sivapk188/usecase5') {
+                    sh 'git pull origin main'
+                    sh 'terraform init'
+                    sh 'terraform apply -auto-approve'
+                }
+            }
+        }
+        stage('Ansible deployment') {
+            steps {
+                echo "********** Ansible deployment is done ************"
+                dir('/home/sivapk188/usecase5') {
+                    sh 'ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -i /home/sivapk188/vm_public_ip.txt first.yaml --private-key=/home/sivapk188/.ssh/id_ed25519'
+                }
+            }
+        }
     }  
-}  
+}
+
+
+
