@@ -48,19 +48,6 @@
         state: started
         enabled: yes
 
-    - name: Add user to docker group
-      user:
-        name: "{{ ansible_user }}"
-        groups: docker
-        append: yes
-
-    - name: Test Docker installation
-      command: docker --version
-      register: docker_version
-      changed_when: false
-
-    - debug:
-        msg: "Docker installed successfully: {{ docker_version.stdout }}"
 
     - name: Pull Flask image from DockerHub
       docker_image:
