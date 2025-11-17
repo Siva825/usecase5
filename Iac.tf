@@ -3,7 +3,7 @@ provider "google" {
 }
 resource "google_compute_instance" "instance1" {
     name = "vm-1"
-    zone =  "us-central1-a" 
+    zone =  "us-west1-b" 
     machine_type = "e2-micro"
     boot_disk {
       initialize_params {
